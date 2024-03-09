@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  padding: 10px;
+  margin: auto;
+  max-width: 1280px;
+  min-height: 90vh;
+}
+body {
+  background-color: #fff; /* Set the desired background color for light mode */
+  color: #000; /* Set the desired text color for light mode */
+}

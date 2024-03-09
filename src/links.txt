@@ -1,0 +1,13 @@
+?api_key=e6a861d49ef07460153337003acacb75
+
+//Now Playing
+https://api.themoviedb.org/3/movie/now_playing?api_key=e6a861d49ef07460153337003acacb75
+
+Popular
+https://api.themoviedb.org/3/movie/popular?api_key=e6a861d49ef07460153337003acacb75
+
+//Top Rated
+https://api.themoviedb.org/3/movie/top_rated?api_key=e6a861d49ef07460153337003acacb75
+
+//Search
+https://api.themoviedb.org/3/search/movie?api_key=e6a861d49ef07460153337003acacb75&query=spiderman&include_adult=false&language=en-US&page=1 \
