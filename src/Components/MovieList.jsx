@@ -13,7 +13,7 @@ const MovieList = ({ api }) => {
     <>
       <div className="flex flex-wrap items-start justify-center gap-4 py-4 dark:bg-gray-900 ">
         {movies?.map((movie) => {
-          let { poster_path, title, id, vote_average: rating } = movie;
+          let { poster_path, title, id, overview } = movie;
 
           return (
             <div
@@ -31,6 +31,9 @@ const MovieList = ({ api }) => {
                   {title}
                 </div>
               </Link>
+              <div className="w-72 px-2 line-clamp-4 dark:text-[#ffffff7b]">
+                {overview}
+              </div>
             </div>
           );
         })}

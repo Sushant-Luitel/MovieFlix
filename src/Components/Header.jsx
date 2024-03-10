@@ -102,6 +102,7 @@ const Header = () => {
             <div className="relative flex top-3">
               <form onSubmit={handleSubmit}>
                 <input
+                  autoComplete="off"
                   onKeyDown={handleKey}
                   type="text"
                   id="search-navbar"
@@ -177,6 +178,7 @@ const Header = () => {
             <form onSubmit={handleSubmit}>
               <input
                 onKeyDown={handleKey}
+                autoComplete="off"
                 type="text"
                 id="search-navbar"
                 className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
