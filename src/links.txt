@@ -1,5 +1,8 @@
 ?api_key=e6a861d49ef07460153337003acacb75
 
+//Individual
+https://api.themoviedb.org/3/movie/{movieid}?api_key=e6a861d49ef07460153337003acacb75
+
 //Now Playing
 https://api.themoviedb.org/3/movie/now_playing?api_key=e6a861d49ef07460153337003acacb75
 

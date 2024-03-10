@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MovieList from "../Components/MovieList";
-
+import MovieDetail from "../Components/MovieDetail";
 import Search from "../Components/Search";
 
 const AllRoutes = () => {
@@ -8,7 +8,7 @@ const AllRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<MovieList api="movie/now_playing" />} />
-
+        <Route path="/movie/:id" element={<MovieDetail />} />
         <Route
           path="movie/upcoming"
           element={<MovieList api="movie/upcoming" />}
