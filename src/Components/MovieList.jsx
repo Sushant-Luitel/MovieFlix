@@ -1,9 +1,11 @@
 import { useFetch } from "./useFetchHook/useFetch";
 
-const MovieList = () => {
-  const { movies, error, isLoading } = useFetch(
-    "https://api.themoviedb.org/3/movie/popular?api_key=e6a861d49ef07460153337003acacb75"
-  );
+const MovieList = ({ api }) => {
+  const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
+  console.log(apiKey);
+  const url = `https://api.themoviedb.org/3/${api}?api_key=${apiKey}`;
+
+  const { movies, error, isLoading } = useFetch(url);
 
   if (error) {
     return <h1>Something went wrong.....</h1>;
@@ -13,14 +15,14 @@ const MovieList = () => {
   }
   return (
     <>
-      <div className="flex flex-wrap items-start justify-center gap-4 mt-4">
+      <div className="flex flex-wrap items-start justify-center gap-4 pt-4 dark:bg-gray-900">
         {movies?.map((movie) => {
           let { poster_path, title, id, vote_average: rating } = movie;
 
           return (
             <div
               key={id}
-              className="rounded shadow-lg border bg-[#edebebf9] pb-3 overflow-hidden "
+              className="rounded shadow-lg border bg-[#edebebf9] pb-3 overflow-hidden dark:bg-gray-900 dark:text-white "
             >
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
