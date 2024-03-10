@@ -5,10 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.main {
+main {
   padding: 10px;
-  margin: auto;
-  max-width: 1280px;
+
   min-height: 90vh;
 }
 body {

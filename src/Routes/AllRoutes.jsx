@@ -13,8 +13,8 @@ const AllRoutes = () => {
           path="movie/upcoming"
           element={<MovieList api="movie/upcoming" />}
         />
-        <Route path="search" element={<Search />} />
         <Route path="movie/top" element={<MovieList api="movie/top_rated" />} />
+        <Route path="search" element={<Search api="search/movie" />} />
       </Routes>
       ;
     </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import sun from "../assets/sun.png";
 import moon from "../assets/moon.png";
 
@@ -25,8 +25,21 @@ const Header = () => {
   const inActiveClass =
     "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
 
+  const navigate = useNavigate();
+  function handleKey(e) {
+    if (e.key == "Enter") {
+      handleSubmit(e);
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const searchKey = e.target.value;
+    return navigate(`/search?q=${searchKey}`);
+  }
+
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white border-b border-gray-200 border-b-gray-400 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <NavLink
           to="/"
@@ -68,7 +81,7 @@ const Header = () => {
             <span className="sr-only">Search</span>
           </button>
           <div className="relative hidden md:block">
-            <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+            <div className="absolute z-10 flex items-center pointer-events-none top-5 start-0 ps-3">
               <svg
                 className="w-4 h-4 text-gray-500 dark:text-gray-400"
                 aria-hidden="true"
@@ -86,13 +99,16 @@ const Header = () => {
               </svg>
               <span className="sr-only">Search icon</span>
             </div>
-            <div className="flex">
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search..."
-              />
+            <div className="relative flex top-3">
+              <form onSubmit={handleSubmit}>
+                <input
+                  onKeyDown={handleKey}
+                  type="text"
+                  id="search-navbar"
+                  className="block w-full p-1 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search..."
+                />
+              </form>
               <button className="ml-6 " onClick={() => setDarkMode(!darkMode)}>
                 {darkMode ? (
                   <>
@@ -158,12 +174,15 @@ const Header = () => {
                 />
               </svg>
             </div>
-            <input
-              type="text"
-              id="search-navbar"
-              className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search..."
-            />
+            <form onSubmit={handleSubmit}>
+              <input
+                onKeyDown={handleKey}
+                type="text"
+                id="search-navbar"
+                className="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search..."
+              />
+            </form>
           </div>
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
