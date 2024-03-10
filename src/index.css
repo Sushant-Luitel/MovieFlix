@@ -7,7 +7,7 @@
 
 main {
   padding: 10px;
-  min-height: 90vh;
+  height: 90vh;
 }
 body {
   background-color: #fff; /* Set the desired background color for light mode */

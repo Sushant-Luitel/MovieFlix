@@ -16,7 +16,6 @@ const AllRoutes = () => {
         <Route path="movie/top" element={<MovieList api="movie/top_rated" />} />
         <Route path="search" element={<Search api="search/movie" />} />
       </Routes>
-      ;
     </div>
   );
 };

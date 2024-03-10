@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="w-full">
       <Header />
-
       <AllRoutes />
-
       <Footer />
     </div>
   );
