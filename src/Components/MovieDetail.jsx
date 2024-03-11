@@ -14,7 +14,7 @@ const MovieDetail = () => {
   }, []);
 
   return (
-    <main className="flex items-center dark:bg-gray-900 dark:text-white">
+    <main className=" dark:bg-gray-900 dark:text-white">
       <div className="flex flex-wrap justify-center gap-24 ">
         <div className="overflow-hidden ">
           <img
@@ -23,7 +23,7 @@ const MovieDetail = () => {
             className="md:w-[350px]"
           />
         </div>
-        <div className="w-5/12 ">
+        <div className="md:w-5/12 ">
           <h1 className="mt-3 text-5xl font-semibold dark:text-white">
             {movies.title}
           </h1>
